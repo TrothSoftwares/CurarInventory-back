@@ -1,0 +1,35 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: zahid-rails_development
+  username: root
+  password: password
+  host: 127.0.0.1
+  pool: 5
+  timeout: 5000
+
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: zahid-rails_development
+  username: root
+  password: password
+  host: 127.0.0.1
+
+
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: zahid-rails_production
+  username: inspire
+  password: <%= ENV['ZAHID-RAILS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
