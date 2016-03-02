@@ -30,6 +30,6 @@ production:
   encoding: unicode
   pool: 5
   database: zahid-rails_production
-  username: inspire
+  username: zahid-rails
   password: <%= ENV['ZAHID-RAILS_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
