@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :productbrands
+  resources :producttypes
+  resources :suppliers
   devise_for :users, controllers: { sessions: 'sessions' }
   resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

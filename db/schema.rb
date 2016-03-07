@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301101535) do
+ActiveRecord::Schema.define(version: 20160302053535) do
+
+  create_table "productbrands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "productbrand"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "itemcode"
@@ -19,7 +25,33 @@ ActiveRecord::Schema.define(version: 20160301101535) do
     t.integer "initialstocklevel"
     t.integer "initialcostprice"
     t.integer "buyprice"
-    t.integer "retail_price"
+    t.integer "retailprice"
+    t.integer "supplier_id"
+    t.integer "producttype_id"
+    t.integer "productbrand_id"
+  end
+
+  add_index "products", ["productbrand_id"], name: "index_products_on_productbrand_id", using: :btree
+  add_index "products", ["producttype_id"], name: "index_products_on_producttype_id", using: :btree
+  add_index "products", ["supplier_id"], name: "index_products_on_supplier_id", using: :btree
+
+  create_table "producttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "producttype"
+  end
+
+  create_table "suppliers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "companyname"
+    t.string   "email"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "suburb"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zipcode"
+    t.string   "phone"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -41,4 +73,7 @@ ActiveRecord::Schema.define(version: 20160301101535) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "products", "productbrands"
+  add_foreign_key "products", "producttypes"
+  add_foreign_key "products", "suppliers"
 end

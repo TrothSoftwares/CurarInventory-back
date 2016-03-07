@@ -1,8 +1,15 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+
+
+gem 'rails', '5.0.0.beta2'
+
+
+
+#gem 'rails', github: "rails/rails"
+
 gem 'sprockets-rails', github: "rails/sprockets-rails"
 gem 'arel', github: "rails/arel"
 
@@ -37,9 +44,5 @@ group :development do
   gem 'mysql2', '~> 0.3.18'
   gem 'listen', '~> 3.0.5'
 
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
-
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
