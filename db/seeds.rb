@@ -8,11 +8,11 @@
 
 #User.create(email: 'admin@test.com', password: 'password')
 
-probrand1 = Productbrand.create(productbrand: 'brandone')
-probrand2 = Productbrand.create(productbrand: 'brandtwo')
+probrand1 = Productbrand.create(brandname: 'brandone')
+probrand2 = Productbrand.create(brandname: 'brandtwo')
 
-protype1 = Producttype.create(producttype: 'producttypeone')
-protype2 = Producttype.create(producttype: 'producttypetwo')
+protype1 = Producttype.create(typename: 'producttypeone')
+protype2 = Producttype.create(typename: 'producttypetwo')
 
 supplier1 = Supplier.create(companyname: 'companyone' , email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 supplier2 = Supplier.create(companyname: 'companytwo' , email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
