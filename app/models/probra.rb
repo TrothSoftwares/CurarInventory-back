@@ -1,0 +1,2 @@
+class Probra < ApplicationRecord
+end

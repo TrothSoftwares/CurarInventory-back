@@ -14,3 +14,9 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'producttype', 'producttypes'
+  inflect.irregular 'productbrand', 'productbrands'
+end

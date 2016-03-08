@@ -1,5 +1,5 @@
 class ProducttypeSerializer < ActiveModel::Serializer
-  attributes :id , :producttype
+  attributes :id , :typename
 
   has_many :products
 end

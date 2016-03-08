@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :probras
   resources :productbrands
   resources :producttypes
   resources :suppliers

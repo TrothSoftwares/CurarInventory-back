@@ -4,7 +4,7 @@ ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 
-gem 'rails', '5.0.0.beta2'
+gem 'rails', github: 'rails/rails'
 
 
 
@@ -21,7 +21,7 @@ gem 'puma'
 
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 
-gem 'active-model-adapter-source', '~> 0.1.7'
+# gem 'active-model-adapter-source', '~> 0.1.7'
 
 gem 'rack-cors', :require => 'rack/cors'
 

@@ -46,8 +46,14 @@ class ProductbrandsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def productbrand_params
-      logger.info params.inspect
 
-      params.fetch(:productbrand, {}).permit( attributes: [:productbrand])
+logger.info params.inspect
+      # params.fetch(:productbrand, {}).permit(:productbrand)
+      # params.fetch(:productbrand, {}).permit(:productbrand)
+      params.fetch(:productbrand, {}).permit!
+#      params.fetch(:supplier, {}).permit!
+#      params.fetch(:productbrand,{}).permit( attributes: [:productbrand])
+      # params[:productbrand]
+
     end
 end

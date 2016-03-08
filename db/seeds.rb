@@ -6,4 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
- User.create(email: 'admin@test.com', password: 'password')
+#User.create(email: 'admin@test.com', password: 'password')
+
+probrand1 = Productbrand.create(productbrand: 'brandone')
+probrand2 = Productbrand.create(productbrand: 'brandtwo')
+
+protype1 = Producttype.create(producttype: 'producttypeone')
+protype2 = Producttype.create(producttype: 'producttypetwo')
+
+supplier1 = Supplier.create(companyname: 'companyone' , email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
+supplier2 = Supplier.create(companyname: 'companytwo' , email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
+
+Product.create(itemcode:'itemonecode',productname:'productonename' , initialstocklevel: 100 , initialcostprice: 100, buyprice: 200 ,retailprice: 250 , supplier: supplier1 , producttype: protype1 , productbrand: probrand1)
+Product.create(itemcode:'itemonecode',productname:'productonename' , initialstocklevel: 100 ,  initialcostprice: 100, buyprice: 200 ,retailprice: 250 , supplier: supplier2 , producttype: protype2 , productbrand: probrand2)

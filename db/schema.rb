@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302053535) do
+ActiveRecord::Schema.define(version: 20160308055621) do
+
+  create_table "probras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "prr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "productbrands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "productbrand"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "brandname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -36,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160302053535) do
   add_index "products", ["supplier_id"], name: "index_products_on_supplier_id", using: :btree
 
   create_table "producttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "producttype"
+    t.string "typename"
   end
 
   create_table "suppliers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -46,6 +46,7 @@ class SuppliersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def supplier_params
+      logger.info params.inspect
       params.fetch(:supplier, {}).permit!
     end
 end
