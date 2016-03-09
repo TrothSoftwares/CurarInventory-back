@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :productname ,:initialstocklevel , :initialcostprice ,:buyprice ,:retailprice
+  attributes :id, :itemcode , :productname ,:initialstocklevel , :initialcostprice ,:buyprice ,:retailprice
 
   belongs_to :supplier
   belongs_to :producttype
