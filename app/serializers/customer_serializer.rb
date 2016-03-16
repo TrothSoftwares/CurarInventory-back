@@ -1,3 +1,3 @@
 class CustomerSerializer < ActiveModel::Serializer
-  attributes :id
+    attributes :id ,:companyname , :companycode , :chargecode , :email , :address1, :address2, :suburb ,:city , :state, :country, :zipcode, :phone
 end
