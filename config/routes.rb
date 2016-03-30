@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :stockadjustmentitems
+  resources :stockadjustments
+  resources :purchaseorderitems
+  resources :purchaseorders
   resources :customers
   resources :probras
   resources :productbrands

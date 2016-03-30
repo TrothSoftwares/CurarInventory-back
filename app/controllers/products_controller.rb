@@ -3,7 +3,14 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
+    # @products = Product.all
+
+    if params[:page]
+      @products = Product.page(params[:page][:number]).per(params[:page][:size])
+    else
+      @products = Product.all
+    end
+
 
     render json: @products
   end

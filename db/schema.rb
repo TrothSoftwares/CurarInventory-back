@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316060353) do
+ActiveRecord::Schema.define(version: 20160322071309) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"
@@ -61,6 +61,57 @@ ActiveRecord::Schema.define(version: 20160316060353) do
   create_table "producttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "typename"
   end
+
+  create_table "purchaseorderitems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.integer  "total"
+    t.string   "poitemstatus"
+    t.date     "recieveddate"
+    t.integer  "purchaseorder_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "purchaseorderitems", ["product_id"], name: "index_purchaseorderitems_on_product_id", using: :btree
+  add_index "purchaseorderitems", ["purchaseorder_id"], name: "index_purchaseorderitems_on_purchaseorder_id", using: :btree
+
+  create_table "purchaseorders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date     "duedate"
+    t.integer  "totalunits"
+    t.integer  "totalcost"
+    t.string   "postatus"
+    t.integer  "supplier_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "purchaseorders", ["supplier_id"], name: "index_purchaseorders_on_supplier_id", using: :btree
+
+  create_table "stockadjustmentitems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.integer  "stockadjustment_id"
+    t.integer  "total"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "stockadjustmentitems", ["product_id"], name: "index_stockadjustmentitems_on_product_id", using: :btree
+  add_index "stockadjustmentitems", ["stockadjustment_id"], name: "index_stockadjustmentitems_on_stockadjustment_id", using: :btree
+
+  create_table "stockadjustments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "customer_id"
+    t.string   "reason"
+    t.text     "notes",       limit: 65535
+    t.string   "sastatus"
+    t.integer  "totalunits"
+    t.integer  "totalcost"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "stockadjustments", ["customer_id"], name: "index_stockadjustments_on_customer_id", using: :btree
 
   create_table "suppliers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"

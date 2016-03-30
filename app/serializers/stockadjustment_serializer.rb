@@ -1,0 +1,5 @@
+class StockadjustmentSerializer < ActiveModel::Serializer
+  attributes :id , :reason ,:notes ,:sastatus ,:totalunits ,:totalcost
+  belongs_to :customer
+  has_many :stockadjustmentitems
+end
