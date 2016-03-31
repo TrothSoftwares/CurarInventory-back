@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322071309) do
+ActiveRecord::Schema.define(version: 20160330090718) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"
@@ -29,6 +29,31 @@ ActiveRecord::Schema.define(version: 20160322071309) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "orderitems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.integer  "total"
+    t.string   "orderitemstatus"
+    t.integer  "order_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "orderitems", ["order_id"], name: "index_orderitems_on_order_id", using: :btree
+  add_index "orderitems", ["product_id"], name: "index_orderitems_on_product_id", using: :btree
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date     "duedate"
+    t.integer  "totalunits"
+    t.integer  "totalcost"
+    t.string   "orderstatus"
+    t.integer  "customer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
 
   create_table "probras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "prr"
