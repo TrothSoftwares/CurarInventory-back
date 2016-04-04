@@ -5,13 +5,9 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all
 
-    if params[:page]
-      @products = Product.page(params[:page][:number]).per(params[:page][:size])
-    else
-      @products = Product.all
-    end
 
-
+@products = Product.all
+ 
     render json: @products
   end
 

@@ -31,6 +31,8 @@ gem 'cloudinary'
 
 gem "mini_magick"
 
+gem 'spreadsheet', '~> 1.1', '>= 1.1.2'
+
 
 group :production do
   gem 'pg' ,'0.18.1'

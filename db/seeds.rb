@@ -11,7 +11,7 @@ supplier1 = Supplier.create(companyname: 'companyone' , companycode: 'supp1' , c
 supplier2 = Supplier.create(companyname: 'companytwo' , companycode: 'supp2' , chargecode: 'supp2',   email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 
 product1 =  Product.create(itemcode:'itemonecode',productname:'productonename' , initialstocklevel: 100 , initialcostprice: 100, buyprice: 200 ,retailprice: 250 , supplier: supplier1 , producttype: protype1 , productbrand: probrand1)
-product2 =  Product.create(itemcode:'itemonecode',productname:'producttwoname' , initialstocklevel: 100 ,  initialcostprice: 100, buyprice: 200 ,retailprice: 250 , supplier: supplier2 , producttype: protype2 , productbrand: probrand2)
+product2 =  Product.create(itemcode:'itemonecode',productname:'producttwoname' , initialstocklevel: 50 ,  initialcostprice: 50, buyprice: 50 ,retailprice: 50 , supplier: supplier2 , producttype: protype2 , productbrand: probrand2)
 customer1 = Customer.create(companyname: 'companyone' , companycode: 'cust1' , chargecode: 'charge1', email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , chargecode: 'charge2',  email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 

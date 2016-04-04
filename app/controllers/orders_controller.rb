@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
 
+
     render json: @orders
   end
 
@@ -28,6 +29,10 @@ class OrdersController < ApplicationController
   def update
     if @order.update(order_params)
       render json: @order
+
+
+
+
     else
       render json: @order.errors, status: :unprocessable_entity
     end
