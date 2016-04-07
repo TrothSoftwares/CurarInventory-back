@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   get 'reports', :to => 'reports#generate'
 
+  get 'download', :to => 'reports#downloadfile'
+
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Serve websocket cable requests in-process

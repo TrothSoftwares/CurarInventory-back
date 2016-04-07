@@ -15,7 +15,11 @@ product2 =  Product.create(itemcode:'itemonecode',productname:'producttwoname' ,
 customer1 = Customer.create(companyname: 'companyone' , companycode: 'cust1' , chargecode: 'charge1', email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , chargecode: 'charge2',  email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 
-purchaseorder1 = Purchaseorder.create(duedate: '2016-03-25' , totalunits: 10 , totalcost: 1000 , postatus: 'created', supplier: supplier1)
+
+
+
+
+purchaseorder1 = Purchaseorder.create(duedate: '2016-03-25' , recieveddate: '2016-03-24' , totalunits: 10 , totalcost: 1000 , postatus: 'created', supplier: supplier1)
 stockadjustment1 = Stockadjustment.create(customer: customer1 , reason: 'returned' , notes: 'Dummy notes',  sastatus: 'recieved' )
 order1 = Order.create(duedate: '2016-03-25' , totalunits: 10 , totalcost: 1000 , orderstatus: 'created', customer: customer1)
 

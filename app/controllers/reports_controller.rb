@@ -33,15 +33,22 @@ class ReportsController < ApplicationController
         sheet1.row(index).replace [product.itemcode, product.productname, product.producttype.typename ]
       }
 
-      export_file_path = [Rails.root, "public", "uploads", "exports", "sss_#{ DateTime.now.to_s }.xls"].join("/")
+      export_file_path = [Rails.root, "public", "uploads", "exports", "reports_#{ DateTime.now.to_s }.xls"].join("/")
       book.write export_file_path
 
+      filepath = [ "/uploads", "exports", "reports_#{ DateTime.now.to_s }.xls"].join("/")
 
-render json: {file_path: export_file_path}, status: :created
+
+render json: {file_path: filepath}, status: :created
     end
 
 
 
+    def downloadfile
+        file_path = "#{Rails.root}/public/uploads/exports/testfile.xls"
+        data = open(file_path).read
 
+        send_data data, :filename => 'testfile.xls', :type=>"application/vnd.ms-excel", :disposition => 'attachment' , :stream => false
+      end
 
 end

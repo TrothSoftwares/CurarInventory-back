@@ -103,12 +103,13 @@ ActiveRecord::Schema.define(version: 20160330090718) do
 
   create_table "purchaseorders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "duedate"
+    t.date     "recieveddate"
     t.integer  "totalunits"
     t.integer  "totalcost"
     t.string   "postatus"
     t.integer  "supplier_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "purchaseorders", ["supplier_id"], name: "index_purchaseorders_on_supplier_id", using: :btree
