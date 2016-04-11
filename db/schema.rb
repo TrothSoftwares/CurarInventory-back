@@ -133,11 +133,13 @@ ActiveRecord::Schema.define(version: 20160330090718) do
     t.string   "sastatus"
     t.integer  "totalunits"
     t.integer  "totalcost"
+    t.integer  "order_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
 
   add_index "stockadjustments", ["customer_id"], name: "index_stockadjustments_on_customer_id", using: :btree
+  add_index "stockadjustments", ["order_id"], name: "index_stockadjustments_on_order_id", using: :btree
 
   create_table "suppliers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"

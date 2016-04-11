@@ -7,6 +7,7 @@ class CreateStockadjustments < ActiveRecord::Migration[5.0]
       t.string :sastatus
       t.integer :totalunits
       t.integer :totalcost
+      t.references :order
       t.timestamps
     end
   end

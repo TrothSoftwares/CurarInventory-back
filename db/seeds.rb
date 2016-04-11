@@ -17,11 +17,9 @@ customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , c
 
 
 
-
-
 purchaseorder1 = Purchaseorder.create(duedate: '2016-03-25' , recieveddate: '2016-03-24' , totalunits: 10 , totalcost: 1000 , postatus: 'created', supplier: supplier1)
-stockadjustment1 = Stockadjustment.create(customer: customer1 , reason: 'returned' , notes: 'Dummy notes',  sastatus: 'recieved' )
 order1 = Order.create(duedate: '2016-03-25' , totalunits: 10 , totalcost: 1000 , orderstatus: 'created', customer: customer1)
+stockadjustment1 = Stockadjustment.create(customer: customer1 , order: order1, reason: 'returned' ,totalunits: 10, totalcost: 5000, notes: 'Dummy notes',  sastatus: 'recieved' )
 
 purchaseorderitem1 = Purchaseorderitem.create(product: product1 , quantity: 5 ,  total: 500 , poitemstatus: 'created' , recieveddate: '2016-03-25' ,purchaseorder: purchaseorder1)
 purchaseorderitem2 = Purchaseorderitem.create(product: product2 , quantity: 5 ,  total: 500 , poitemstatus: 'created' , recieveddate: '2016-03-25'  ,purchaseorder: purchaseorder1)
