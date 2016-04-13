@@ -18,9 +18,9 @@ Rails.application.routes.draw do
 
 
 
-  get 'reports', :to => 'reports#generate'
 
-  get 'download', :to => 'reports#downloadfile'
+
+  get 'mailorder', :to => 'purchaseorders#mailorder'
 
 
 

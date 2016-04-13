@@ -38,6 +38,18 @@ class PurchaseordersController < ApplicationController
     @purchaseorder.destroy
   end
 
+
+
+  def mailorder
+
+    # logger.info params.inspect
+
+    @purchaseorder = Purchaseorder.find(params[:id])
+
+     PurchaseMailer.purchaseorder(@purchaseorder).deliver_now
+    render json: {}, status: 200
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_purchaseorder
