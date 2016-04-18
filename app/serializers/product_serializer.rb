@@ -4,4 +4,8 @@ class ProductSerializer < ActiveModel::Serializer
   belongs_to :supplier , :dependent => :destroy
   belongs_to :producttype , :dependent => :destroy
   belongs_to :productbrand , :dependent => :destroy
+  has_many :purchaseorderitems
+  has_many :stockadjustmentitems
+  has_many :orderitems 
+
 end
