@@ -1,5 +1,7 @@
 
 User.create(email: 'admin@test.com', password: 'password')
+User.create(email: 'msadiq@ocsarabia.com.sa', password: 'ocs321msadiq')
+User.create(email: 'admin@ocsarabia.com.sa', password: 'ocs321admin')
 
 probrand1 = Productbrand.create(brandname: 'Select Brand')
 # probrand2 = Productbrand.create(brandname: 'brandtwo')
