@@ -21,7 +21,8 @@ gem 'puma'
 
 #gem 'active_model_serializers', '~> 0.10.0.rc2'
 gem "active_model_serializers", github: "rails-api/active_model_serializers", tag: "v0.10.0.rc4"
-gem "kaminari"
+gem 'will_paginate', '~> 3.1.0'
+
 
 # gem 'active-model-adapter-source', '~> 0.1.7'
 
