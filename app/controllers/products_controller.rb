@@ -12,9 +12,15 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     # @products = Product.all
-    @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => 1)
+    @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
 
 
+
+    data = {
+      products: @products,
+      total_pages: @products.total_pages
+
+    }
     render json: @products
   end
 
