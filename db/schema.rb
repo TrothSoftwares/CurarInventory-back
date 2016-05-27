@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527042658) do
+ActiveRecord::Schema.define(version: 20160527070525) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"
@@ -60,11 +60,19 @@ ActiveRecord::Schema.define(version: 20160527042658) do
     t.integer  "totalcost"
     t.string   "orderstatus"
     t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "mrf"
+    t.string   "location"
+    t.string   "natureofwork"
+    t.integer  "supplier_id"
+    t.integer  "employee_id"
+    t.date     "issuancedate"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
+  add_index "orders", ["employee_id"], name: "index_orders_on_employee_id", using: :btree
+  add_index "orders", ["supplier_id"], name: "index_orders_on_supplier_id", using: :btree
 
   create_table "probras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "prr"
@@ -201,6 +209,8 @@ ActiveRecord::Schema.define(version: 20160527042658) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "orders", "employees"
+  add_foreign_key "orders", "suppliers"
   add_foreign_key "products", "productbrands"
   add_foreign_key "products", "producttypes"
   add_foreign_key "products", "suppliers"
