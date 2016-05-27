@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524043748) do
+ActiveRecord::Schema.define(version: 20160527042658) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"
@@ -168,6 +168,19 @@ ActiveRecord::Schema.define(version: 20160524043748) do
     t.string   "companycode"
     t.string   "chargecode"
   end
+
+  create_table "tools", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "status"
+    t.date     "issuedate"
+    t.integer  "employee_id"
+    t.date     "lostdate"
+    t.date     "damagedate"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "tools", ["employee_id"], name: "index_tools_on_employee_id", using: :btree
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
