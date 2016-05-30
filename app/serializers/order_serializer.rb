@@ -3,6 +3,8 @@ class OrderSerializer < ActiveModel::Serializer
   belongs_to :customer
   belongs_to :supplier
   belongs_to :employee
+  belongs_to :requestedby
+  belongs_to :approvedby
   has_many :orderitems
   has_many :stockadjustments
 end

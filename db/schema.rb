@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527070525) do
+ActiveRecord::Schema.define(version: 20160530075717) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"
@@ -60,14 +60,16 @@ ActiveRecord::Schema.define(version: 20160527070525) do
     t.integer  "totalcost"
     t.string   "orderstatus"
     t.integer  "customer_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "mrf"
     t.string   "location"
     t.string   "natureofwork"
     t.integer  "supplier_id"
     t.integer  "employee_id"
     t.date     "issuancedate"
+    t.integer  "requestedby_id"
+    t.integer  "approvedby_id"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
