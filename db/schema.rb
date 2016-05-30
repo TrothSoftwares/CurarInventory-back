@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530075717) do
+ActiveRecord::Schema.define(version: 20160530092817) do
+
+  create_table "commontools", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "slno"
+    t.string   "name"
+    t.string   "status"
+    t.date     "issuedate"
+    t.integer  "employee_id"
+    t.date     "returndate"
+    t.string   "location"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "commontools", ["employee_id"], name: "index_commontools_on_employee_id", using: :btree
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "companyname"
@@ -188,6 +202,8 @@ ActiveRecord::Schema.define(version: 20160530075717) do
     t.date     "damagedate"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "vendor"
+    t.string   "invoiceno"
   end
 
   add_index "tools", ["employee_id"], name: "index_tools_on_employee_id", using: :btree
