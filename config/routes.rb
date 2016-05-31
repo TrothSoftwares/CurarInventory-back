@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :commontoolissuances
   resources :commontools
   resources :tools
   resources :employees

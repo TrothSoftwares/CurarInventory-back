@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530092817) do
+ActiveRecord::Schema.define(version: 20160531100956) do
+
+  create_table "commontoolissuances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "status"
+    t.date     "issuedate"
+    t.integer  "employee_id"
+    t.integer  "commontool_id"
+    t.date     "returndate"
+    t.string   "location"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "commontoolissuances", ["commontool_id"], name: "index_commontoolissuances_on_commontool_id", using: :btree
+  add_index "commontoolissuances", ["employee_id"], name: "index_commontoolissuances_on_employee_id", using: :btree
 
   create_table "commontools", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "slno"
