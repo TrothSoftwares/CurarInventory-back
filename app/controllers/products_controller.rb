@@ -12,7 +12,15 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     # @products = Product.all
+
+
+    # @products = Product.search(params[:producttype]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    if params[:producttype]
+     @products = Product.where(:producttype=>params[:producttype]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+   else
     @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+  end
+    
 
 
 
