@@ -19,8 +19,10 @@ class ProductsController < ApplicationController
     @products = Product.where(:producttype=>params[:producttype]).search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
     elsif params[:producttype]
      @products = Product.where(:producttype=>params[:producttype]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
-   else
+   elsif params[:page] || params[:sort] || params[:direction]
     @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
+  else
+    @products = Product.all.paginate(:per_page => 1000, :page => 1)
   end
 
 
