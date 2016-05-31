@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
    else
     @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
   end
-    
+
 
 
 
