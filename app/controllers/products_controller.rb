@@ -1,19 +1,34 @@
 class ProductsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   before_action :set_product, only: [:show, :update, :destroy]
+
+
+
+
+
+
 
   # GET /products
   def index
     # @products = Product.all
-    if params[:page]
-     @products = Product.page(params[:page]).per(params[:size])
+
+
+    # @products = Product.search(params[:producttype]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    if params[:producttype]
+     @products = Product.where(:producttype=>params[:producttype]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
    else
+    @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+  end
 
 
 
 
-@products = Product.all
-end
+    data = {
+      products: @products,
+      total_pages: @products.total_pages
 
+    }
     render json: @products
   end
 
@@ -58,3 +73,14 @@ end
       params.fetch(:product,{}).permit!
     end
 end
+
+
+private
+
+ def sort_column
+   Product.column_names.include?(params[:sort]) ? params[:sort] : "productname"
+ end
+
+ def sort_direction
+   %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+ end
