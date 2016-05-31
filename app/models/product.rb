@@ -11,7 +11,12 @@ class Product < ApplicationRecord
 
   def self.search(search)
   if search
+
+    if Rails.env == 'production'
+    where('productname ILIKE ?', "%#{search}%")
+  else
     where('productname LIKE ?', "%#{search}%")
+  end
   else
     all
   end
