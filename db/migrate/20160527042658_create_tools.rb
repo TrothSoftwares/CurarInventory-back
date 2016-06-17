@@ -4,7 +4,7 @@ class CreateTools < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :status
       t.date :issuedate
-      t.references :employee
+      t.references :employee , index: true, foreign_key: true
       t.date :lostdate
       t.date :damagedate
       t.timestamps

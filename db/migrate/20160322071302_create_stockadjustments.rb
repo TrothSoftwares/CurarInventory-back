@@ -1,7 +1,7 @@
 class CreateStockadjustments < ActiveRecord::Migration[5.0]
   def change
     create_table :stockadjustments do |t|
-      t.references :customer
+      t.references :customer 
       t.string :reason
       t.text :notes
       t.string :sastatus

@@ -241,9 +241,21 @@ ActiveRecord::Schema.define(version: 20160531100956) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "commontoolissuances", "commontools"
+  add_foreign_key "commontoolissuances", "employees"
+  add_foreign_key "commontools", "employees"
+  add_foreign_key "orderitems", "orders"
+  add_foreign_key "orderitems", "products"
+  add_foreign_key "orders", "customers"
   add_foreign_key "orders", "employees"
   add_foreign_key "orders", "suppliers"
   add_foreign_key "products", "productbrands"
   add_foreign_key "products", "producttypes"
   add_foreign_key "products", "suppliers"
+  add_foreign_key "purchaseorderitems", "products"
+  add_foreign_key "purchaseorderitems", "purchaseorders"
+  add_foreign_key "purchaseorders", "suppliers"
+  add_foreign_key "stockadjustmentitems", "products"
+  add_foreign_key "stockadjustmentitems", "stockadjustments"
+  add_foreign_key "tools", "employees"
 end

@@ -6,7 +6,7 @@ class CreatePurchaseorders < ActiveRecord::Migration[5.0]
       t.integer :totalunits
       t.integer :totalcost
       t.string :postatus
-      t.references :supplier
+      t.references :supplier , index: true, foreign_key: true
       t.timestamps
     end
   end

@@ -3,8 +3,8 @@ class CreateCommontoolissuances < ActiveRecord::Migration[5.0]
     create_table :commontoolissuances do |t|
       t.string :status
       t.date :issuedate
-      t.references :employee
-      t.references :commontool
+      t.references :employee , index: true, foreign_key: true
+      t.references :commontool , index: true, foreign_key: true
       t.date :returndate
       t.string :location
       t.timestamps
