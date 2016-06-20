@@ -11,16 +11,18 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    # @products = Product.all
+# params[:page] || params[:sort] || params[:direction] && params[:productname]
 
-
-    # @products = Product.search(params[:producttype]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
   if params[:producttype] && params[:productname]
     @products = Product.where(:producttype=>params[:producttype]).search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
     elsif params[:producttype]
      @products = Product.where(:producttype=>params[:producttype]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
-   elsif params[:page] || params[:sort] || params[:direction]
+   elsif params[:itemcode]
+    @products = Product.searchitemcode(params[:itemcode]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
+   elsif params[:productname]
     @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
+  elsif params[:page] || params[:sort] || params[:direction]
+   @products = Product.search(params[:productname]).order(sort_column + " " + sort_direction).paginate(:per_page => 8, :page => params[:page])
   else
     @products = Product.all.paginate(:per_page => 1000, :page => 1)
   end
