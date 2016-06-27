@@ -4,7 +4,7 @@ class CreatePurchaseorders < ActiveRecord::Migration[5.0]
       t.date :duedate
       t.date :recieveddate
       t.integer :totalunits
-      t.integer :totalcost
+      t.decimal :totalcost ,  :precision => 8, :scale => 2
       t.string :postatus
       t.references :supplier , index: true, foreign_key: true
       t.timestamps

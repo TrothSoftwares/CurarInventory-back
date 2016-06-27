@@ -7,7 +7,7 @@ default: &default
 development:
   adapter: mysql2
   encoding: utf8
-  database: mydb
+  database: mydb_again
   username: root
   password: password
   host: 127.0.0.1
