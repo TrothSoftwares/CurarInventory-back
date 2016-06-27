@@ -29,7 +29,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: zahid-rails_production
-  username: zahid-rails
-  password: <%= ENV['ZAHID-RAILS_DATABASE_PASSWORD'] %>
+  database: zahid-backend_production
+  username: zahid-backend
+  password: <%= ENV['ZAHID-BACKEND_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
