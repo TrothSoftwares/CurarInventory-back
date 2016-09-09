@@ -18,7 +18,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: inventdemo-back_development
+  database: zahid-rails_development
   username: root
   password: password
   host: 127.0.0.1
@@ -29,7 +29,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: inventdemo-back_production
-  username: inventdemo-back
-  password: <%= ENV['INVENTDEMO-BACK_DATABASE_PASSWORD'] %>
+  database: zahid-backend_production
+  username: zahid-backend
+  password: <%= ENV['ZAHID-BACKEND_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
