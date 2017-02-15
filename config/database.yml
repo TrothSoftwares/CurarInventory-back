@@ -7,7 +7,7 @@ default: &default
 development:
   adapter: mysql2
   encoding: utf8
-  database: mydb_again
+  database: curarinventory-back_development
   username: root
   password: password
   host: 127.0.0.1
@@ -18,7 +18,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: trothinventory-back_development
+  database: curarinventory-back_development
   username: root
   password: password
   host: 127.0.0.1
@@ -29,7 +29,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: trothinventory-back_production
-  username: trothinventory-back
-  password: <%= ENV['TROTHINVENTORY-BACK_DATABASE_PASSWORD'] %>
+  database: curarinventory-back_production
+  username: curarinventory-back
+  password: <%= ENV['CURARINVENTORY-BACK_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
