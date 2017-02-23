@@ -1,7 +1,7 @@
 
 User.create(email: 'admin@test.com', password: 'password')
-User.create(email: 'msadiq@ocsarabia.com.sa', password: 'ocs321msadiq')
-User.create(email: 'admin@ocsarabia.com.sa', password: 'ocs321admin')
+# User.create(email: 'msadiq@ocsarabia.com.sa', password: 'ocs321msadiq')
+# User.create(email: 'admin@ocsarabia.com.sa', password: 'ocs321admin')
 
 probrand1 = Productbrand.create(brandname: 'Select Brand')
 # probrand2 = Productbrand.create(brandname: 'brandtwo')
@@ -10,14 +10,14 @@ protype1 = Producttype.create(typename: 'Select Product Type')
 # protype2 = Producttype.create(typename: 'producttypetwo')
 
 supplier1 = Supplier.create(companyname: 'Select Supplier' , companycode: 'supp1' , chargecode: 'supp1',  email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
-# supplier2 = Supplier.create(companyname: 'companytwo' , companycode: 'supp2' , chargecode: 'supp2',   email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
+supplier2 = Supplier.create(companyname: 'companytwo' , companycode: 'supp2' , chargecode: 'supp2',   email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 
 ## edited to delete product one
-#product1 =  Product.create(itemcode:'itemonecode',productname:'Select Product' , initialstocklevel: 100.00 , initialcostprice: 100.00, buyprice: 200 ,retailprice: 250 , supplier: supplier1 , producttype: protype1 , productbrand: probrand1)
+product1 =  Product.create(itemcode:'itemonecode',productname:'Select Product' , initialstocklevel: 100.00 , initialcostprice: 100.00, buyprice: 200 ,retailprice: 250 , supplier: supplier1 , producttype: protype1 , productbrand: probrand1)
 
-# product2 =  Product.create(itemcode:'itemonecode',productname:'producttwoname' , initialstocklevel: 50 ,  initialcostprice: 50, buyprice: 50 ,retailprice: 50 , supplier: supplier2 , producttype: protype2 , productbrand: probrand2)
+product2 =  Product.create(itemcode:'itemonecode',productname:'producttwoname' , initialstocklevel: 50 ,  initialcostprice: 50, buyprice: 50 ,retailprice: 50 , supplier: supplier2 , producttype: protype1 , productbrand: probrand1)
 customer1 = Customer.create(companyname: 'Select Customer' , companycode: 'cust1' , chargecode: 'charge1', email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
-# customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , chargecode: 'charge2',  email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
+customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , chargecode: 'charge2',  email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 
 
 

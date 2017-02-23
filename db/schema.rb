@@ -85,11 +85,20 @@ ActiveRecord::Schema.define(version: 20160620094807) do
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "duedate"
     t.integer  "totalunits"
-    t.decimal  "totalcost",      precision: 8, scale: 2
+    t.decimal  "totalcost",       precision: 8, scale: 2
     t.string   "orderstatus"
     t.integer  "customer_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.string   "hsncode"
+    t.decimal  "rateoftax",       precision: 8, scale: 2, default: "5.0"
+    t.decimal  "exciseduty",      precision: 8, scale: 2
+    t.decimal  "cashdiscount",    precision: 8, scale: 2
+    t.decimal  "nettaxablevalue", precision: 8, scale: 2
+    t.decimal  "tax",             precision: 8, scale: 2
+    t.decimal  "roundoff",        precision: 8, scale: 2
+    t.decimal  "diecost",         precision: 8, scale: 2
+    t.decimal  "misc",            precision: 8, scale: 2
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
     t.string   "mrf"
     t.string   "location"
     t.string   "natureofwork"
