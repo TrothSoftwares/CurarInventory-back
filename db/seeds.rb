@@ -1,5 +1,9 @@
 
-User.create(email: 'admin@test.com', password: 'password')
+
+User.create(email: 'admin@curargratis.com', password: 'curar2017')
+User.create(email: 'sales@curargratis.com', password: 'sales2017')
+User.create(email: 'delivery@curargratis.com', password: 'delivery2017')
+
 # User.create(email: 'msadiq@ocsarabia.com.sa', password: 'ocs321msadiq')
 # User.create(email: 'admin@ocsarabia.com.sa', password: 'ocs321admin')
 
