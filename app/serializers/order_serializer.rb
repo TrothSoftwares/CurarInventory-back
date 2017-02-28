@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id ,:duedate ,:totalunits ,:totalcost , :orderstatus , :mrf , :location , :natureofwork , :issuancedate , :hsncode, :rateoftax , :exciseduty , :cashdiscount , :nettaxablevalue ,:tax , :roundoff, :diecost,  :misc  
+  attributes :id ,:duedate ,:totalunits ,:totalcost , :orderstatus , :mrf , :location , :natureofwork , :issuancedate , :roundoff ,:chargableamount
   belongs_to :customer
   belongs_to :supplier
   belongs_to :employee

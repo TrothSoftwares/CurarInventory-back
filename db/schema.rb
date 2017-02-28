@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160620094807) do
     t.string   "companyname"
     t.string   "companycode"
     t.string   "chargecode"
+    t.string   "tin"
     t.string   "email"
     t.string   "address1"
     t.string   "address2"
@@ -62,6 +63,10 @@ ActiveRecord::Schema.define(version: 20160620094807) do
     t.integer  "slno"
     t.string   "payroll"
     t.string   "name"
+    t.string   "address"
+    t.string   "bloodgroup"
+    t.string   "designation"
+    t.string   "dateofjoin"
     t.string   "department"
     t.string   "workcontact"
     t.string   "personalcontact"
@@ -73,6 +78,13 @@ ActiveRecord::Schema.define(version: 20160620094807) do
     t.integer  "product_id"
     t.integer  "quantity"
     t.decimal  "total",           precision: 8, scale: 2
+    t.decimal  "totalvalue",      precision: 8, scale: 2
+    t.decimal  "rateoftax",       precision: 8, scale: 2
+    t.decimal  "tax",             precision: 8, scale: 2
+    t.decimal  "nettaxablevalue", precision: 8, scale: 2
+    t.decimal  "exciseduty",      precision: 8, scale: 2
+    t.decimal  "cashdiscount",    precision: 8, scale: 2
+    t.decimal  "grossvalue",      precision: 8, scale: 2
     t.string   "orderitemstatus"
     t.integer  "order_id"
     t.datetime "created_at",                              null: false
@@ -88,17 +100,10 @@ ActiveRecord::Schema.define(version: 20160620094807) do
     t.decimal  "totalcost",       precision: 8, scale: 2
     t.string   "orderstatus"
     t.integer  "customer_id"
-    t.string   "hsncode"
-    t.decimal  "rateoftax",       precision: 8, scale: 2, default: "5.0"
-    t.decimal  "exciseduty",      precision: 8, scale: 2
-    t.decimal  "cashdiscount",    precision: 8, scale: 2
-    t.decimal  "nettaxablevalue", precision: 8, scale: 2
-    t.decimal  "tax",             precision: 8, scale: 2
     t.decimal  "roundoff",        precision: 8, scale: 2
-    t.decimal  "diecost",         precision: 8, scale: 2
-    t.decimal  "misc",            precision: 8, scale: 2
-    t.datetime "created_at",                                              null: false
-    t.datetime "updated_at",                                              null: false
+    t.decimal  "chargableamount", precision: 8, scale: 2
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "mrf"
     t.string   "location"
     t.string   "natureofwork"

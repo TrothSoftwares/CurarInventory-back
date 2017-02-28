@@ -4,6 +4,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
       t.string :companyname
       t.string :companycode , :unique => true
       t.string :chargecode , :unique => true
+      t.string :tin
       t.string :email
       t.string :address1
       t.string :address2
