@@ -17,11 +17,14 @@ supplier1 = Supplier.create(companyname: 'Select Supplier' , companycode: 'supp1
 supplier2 = Supplier.create(companyname: 'companytwo' , companycode: 'supp2' , chargecode: 'supp2',   email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 
 ## edited to delete product one
-product1 =  Product.create(itemcode:'itemonecode',productname:'Select Product' , initialstocklevel: 100.00 , initialcostprice: 100.00, buyprice: 200 ,retailprice: 250 , supplier: supplier1 , producttype: protype1 , productbrand: probrand1)
+product1 =  Product.create(itemcode:'selectproduct',productname:'Select Product' , initialstocklevel: 100.00 , initialcostprice: 100.00, buyprice: 200 ,retailprice: 250 , supplier: supplier1 , producttype: protype1 , productbrand: probrand1)
 
-product2 =  Product.create(itemcode:'itemonecode',productname:'producttwoname' , initialstocklevel: 50 ,  initialcostprice: 50, buyprice: 50 ,retailprice: 50 , supplier: supplier2 , producttype: protype1 , productbrand: probrand1)
+product2 =  Product.create(itemcode:'product2',productname:'producttwoname' , initialstocklevel: 50 ,  initialcostprice: 50, buyprice: 50 ,retailprice: 50 , supplier: supplier2 , producttype: protype1 , productbrand: probrand1)
 customer1 = Customer.create(companyname: 'Select Customer' , companycode: 'cust1' , chargecode: 'charge1', email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
 customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , chargecode: 'charge2',  email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
+
+employee1 = Employee.create(name: 'Select Employee'  )
+
 
 
 
