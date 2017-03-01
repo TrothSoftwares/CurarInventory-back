@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20160620094807) do
     t.string   "address"
     t.string   "bloodgroup"
     t.string   "designation"
-    t.string   "dateofjoin"
+    t.date     "dateofjoin"
     t.string   "department"
     t.string   "workcontact"
     t.string   "personalcontact"

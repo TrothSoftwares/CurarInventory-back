@@ -11,6 +11,7 @@ class CreateEmployees < ActiveRecord::Migration[5.0]
       t.string :department
       t.string :workcontact
       t.string :personalcontact
+      t.date :dateofjoin
       t.timestamps
     end
   end
