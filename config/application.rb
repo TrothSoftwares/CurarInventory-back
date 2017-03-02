@@ -25,8 +25,8 @@ module ZahidRails
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.time_zone = 'Kolkata'
-    config.active_record.default_timezone = 'Kolkata'
+    config.time_zone = 'Asia/Kolkata'
+    config.active_record.default_timezone = 'Asia/Kolkata'
 
     config.middleware.use ActionDispatch::Flash
 
