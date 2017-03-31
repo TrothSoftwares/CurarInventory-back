@@ -1,6 +1,6 @@
 
 
-User.create(email: 'admin@curargratis.com', password: 'curar2017')
+User.create(email: 'admin@indiantraders.com', password: 'trader2017')
 User.create(email: 'sales@curargratis.com', password: 'sales2017')
 User.create(email: 'delivery@curargratis.com', password: 'delivery2017')
 
