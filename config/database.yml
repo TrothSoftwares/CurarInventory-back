@@ -7,7 +7,7 @@ default: &default
 development:
   adapter: mysql2
   encoding: utf8
-  database: curarinventory-back_development
+  database: trader-back_development
   username: root
   password: password
   host: 127.0.0.1
@@ -18,7 +18,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: curarinventory-back_development
+  database: trader-back_development
   username: root
   password: password
   host: 127.0.0.1
@@ -29,7 +29,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: curarinventory-back_production
-  username: curarinventory-back
-  password: <%= ENV['CURARINVENTORY-BACK_DATABASE_PASSWORD'] %>
+  database: trader-back_production
+  username: trader-back
+  password: <%= ENV['TRADER-BACK_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>

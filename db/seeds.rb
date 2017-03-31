@@ -20,8 +20,8 @@ supplier2 = Supplier.create(companyname: 'companytwo' , companycode: 'supp2' , c
 product1 =  Product.create(itemcode:'selectproduct',productname:'Select Product' , initialstocklevel: 100.00 , initialcostprice: 100.00, buyprice: 200 ,retailprice: 250 , supplier: supplier1 , producttype: protype1 , productbrand: probrand1)
 
 product2 =  Product.create(itemcode:'product2',productname:'producttwoname' , initialstocklevel: 50 ,  initialcostprice: 50, buyprice: 50 ,retailprice: 50 , supplier: supplier2 , producttype: protype1 , productbrand: probrand1)
-customer1 = Customer.create(companyname: 'Select Customer' , companycode: 'cust1' , chargecode: 'charge1', email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
-customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , chargecode: 'charge2',  email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585')
+customer1 = Customer.create(companyname: 'Select Customer' , companycode: 'cust1' , chargecode: 'charge1', email: 'companyone@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585' , due: 10000)
+customer2 = Customer.create(companyname: 'companytwo' , companycode: 'cust2' , chargecode: 'charge2',  email: 'companytwo@gmail.com' , address1: 'address1' , address2: 'address2', suburb: 'suburb',city: 'city' , state: 'state' , country: 'country',zipcode:'689672',phone:'04735253585' , due: 50000)
 
 employee1 = Employee.create(name: 'Select Employee'  )
 
@@ -35,6 +35,15 @@ employee1 = Employee.create(name: 'Select Employee'  )
 purchaseorder1 = Purchaseorder.create(duedate: '2016-03-25' , recieveddate: '2016-03-24' , totalunits: 10 , totalcost: 1000 , postatus: 'created', supplier: supplier1)
 ####
 order1 = Order.create(duedate: '2016-03-25' , totalunits: 10 , totalcost: 1000 , orderstatus: 'created', customer: customer1)
+
+
+
+payment1 = Payment.create(amount:5000 ,customer: customer1)
+payment2 = Payment.create(amount:1000 ,customer: customer1)
+payment3 = Payment.create(amount:20000 ,customer: customer2)
+payment4 = Payment.create(amount:10000 ,customer: customer2)
+
+
 ###
 #stockadjustment1 = Stockadjustment.create(customer: customer1 , order: order1, reason: 'returned' ,totalunits: 10, totalcost: 5000, notes: 'Dummy notes',  sastatus: 'recieved' )
 ####

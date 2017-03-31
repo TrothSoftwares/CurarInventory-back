@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620094807) do
+ActiveRecord::Schema.define(version: 20170324061551) do
 
   create_table "commontoolissuances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "status"
@@ -55,8 +55,9 @@ ActiveRecord::Schema.define(version: 20160620094807) do
     t.string   "country"
     t.string   "zipcode"
     t.string   "phone"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.decimal  "due",         precision: 8, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -117,6 +118,15 @@ ActiveRecord::Schema.define(version: 20160620094807) do
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
   add_index "orders", ["employee_id"], name: "index_orders_on_employee_id", using: :btree
   add_index "orders", ["supplier_id"], name: "index_orders_on_supplier_id", using: :btree
+
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "customer_id"
+    t.decimal  "amount",      precision: 8, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "payments", ["customer_id"], name: "index_payments_on_customer_id", using: :btree
 
   create_table "productbrands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "brandname"
@@ -258,6 +268,7 @@ ActiveRecord::Schema.define(version: 20160620094807) do
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "employees"
   add_foreign_key "orders", "suppliers"
+  add_foreign_key "payments", "customers"
   add_foreign_key "products", "productbrands"
   add_foreign_key "products", "producttypes"
   add_foreign_key "products", "suppliers"

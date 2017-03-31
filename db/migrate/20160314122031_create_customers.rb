@@ -14,6 +14,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
       t.string :country
       t.string :zipcode
       t.string :phone
+      t.decimal :due ,  :precision => 8, :scale => 2
       t.timestamps
     end
   end
