@@ -7,8 +7,7 @@ User.create(email: 'delivery@curargratis.com', password: 'delivery2017')
 # User.create(email: 'msadiq@ocsarabia.com.sa', password: 'ocs321msadiq')
 # User.create(email: 'admin@ocsarabia.com.sa', password: 'ocs321admin')
 
-for i in 1..7
-probrand1 = Productbrand.create(brandname: 'Select Brand')
+ probrand1 = Productbrand.create(brandname: 'Select Brand')
 
 
 
